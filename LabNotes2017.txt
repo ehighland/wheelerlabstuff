@@ -1,0 +1,14 @@
+01/24/17
+Run BSLMM on all HapMap3 pops
+Look in similarly named folders
+-Individual pops
+-Also do everyone combined
+-Continental groups
+
+Lauren will also need BSLMM done for her data
+
+After we have run everything through BSLMM, can extract important or interesting genes
+Summarize data
+Combine with Aly's elastic net stuff
+
+

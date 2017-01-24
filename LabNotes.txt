@@ -1,0 +1,138 @@
+WHEELER LAB NOTES
+
+~/elastic_net/testoutput/HapMap3_YRI_exp_10-foldCV_elasticNet_alpha0_chr22_2016-10-12.txt
+
+/home/wheelerlab1/bslmm_scripts
+
+11/07
+
+to get gemma working for 1st half, follow elastic net script
+
+in addition to genotype file look for snp annotation file
+
+The idea is to pull out SNPs within on megabase of each gene (first part of for loop, goes through gene list)
+Once for loop works, it will be fine
+
+Top part: get info to see where gene is
+
+bim file: SNP annotation (check elastic net script) -- 
+fam file: list of individual IDs/sex/relationship (check elastic net) -- list of sample IDs
+
+Get one gene working!
+
+dim names -- dimension names (# rows, # cols)
+
+11/14
+Dr. Wheeler will take a look, get file paths
+Paper: differences in populations, applied to a disease. Show GWAS in Europeans, in Africans not there
+
+11/21
+Figure 2: how did they get these values? ISC -- training sample
+Ran GWAS on ISC, then (didn't have genome wide significance) so they looked deeper
+Case-control so odds ratio for all SNPs
+Calculate score for second cohort with SNPs at each threshold
+R^2 --> variance explained
+Test five diff thresholds 
+Still signal even at P of 0.5
+Other diseases -- negative control
+Put on slide all abbreviations! 
+Overlapping architecture between bipolar/schizo
+MGS-AA is lower (different linkage patterns)
+MGS-EA
+O'Donovan
+Could make a table next to the slide with populations...could include info about which country
+MGS = largest signal
+
+Trying to only test independent signals rather than redundancy 
+Even with pruning they see significant ability to
+Score higher in cases than controls
+
+Vm Va --> corner of slide to remind self what they are!
+If you knew the causative SNPs, that would explain a better proportion of variance than just things linked
+Va --> total additive genetic variance
+Vm --> marker variance
+SNPs linked to other SNPs...if you genotype one that's not functional SNP, any effect size will be smaller
+Vm should be lower than Va
+
+Figure 3
+a -- real data
+b -- polygenic models
+--> GRR: genotypic relative risk
+(all small...less than 1.1 effect size)
+c -- assuming 10 to 100 causal alleles
+
+Can re-use some images from Wheeler's
+--Schizophrenia is like tiny boxes on the hillside
+
+Figure 4
+Simulating the causal alleles with a normal distribution
+Haven't measured rare stuff in observed
+In simulation of SNPs with causal alleles 0-100%, matches more with observed
+
+In families, it could be a single large effect that causes something
+Parents/children to get at rare things
+
+1.3rd of heritability in schizophrenia explained by common variance
+Modeling things this way shows that there is something there, but can only explain ~3% of the variance 
+
+Look at what has been done SINCE paper (2009)
+
+End with what they're at now/future directions/how the paper predicted future directions/how have things changed since 2009?
+Comment on where are authors???
+They are all at the end
+
+GWAS won't tell all answers!
+
+CPU 8,9,10,11
+
+11/28/16
+NOTE: Missed meeting
+Rough outline for running chromosomes:
+nohup taskset -c [core #] Rscript bslmm_for_emma.r [chromsome] YRI
+
+12/05/16
+Main thing: generate plots of data
+Once all files merged
+Two params of interest: pve50 
+-->pve is the heritability estimate (how heritable is expression?)
+-->the 50 is the median
+---->Gives an estimate each time it goes through
+-->use error bars for confidence intervals
+PVE: percent variance explained (by SNPs or other input/whatever you're modeling...in this case, want SNPs to model gene expression)
+----> "Percent 
+PGE50: sparse component of PVE
+E.g. if PVE is 0.5 (i.e. 50%) and PGE is 0.75 (i.e. 75%), then it's 75% of %50 for the sparse architecture. Rest of 50% is polygenic model. 
+
+Rmarkdown (tutorial posted in slack)
+-->ggplot2 library
+
+ngamma50 --> number of SNPs in each predictive model
+---> model throws correlated things out
+
+HISTOGRAM for ngamma50 
+--> show distribution
+
+PVE50 vs. position (upward curve with error bars)
+
+See slack for further instructions
+
+3 histograms: one for each of the PVE50, PVE50, NGamma50
+
+Explain BSLMM -- look at reference
+Summarize in short paragraph 
+Bulk: the methods
+----> software
+----> parameters
+----> data
+----> results: what we're working on now
+----> discussion: next steps
+--------> Possibly run another population if there's time!
+
+Other population: not LWK, any other one!
+
+Longterm goal: paper with results from HapMap populations
+----> Aly and Natalie -- look at their paper
+
+Code notes:
+for file in YRI_*.txt; do python combine2.py $file; done
+
