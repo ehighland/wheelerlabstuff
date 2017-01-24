@@ -1,2 +1,2 @@
-# Wheeler Lab Stuff
-## Where lab notes and code live
+# Emma's Wheeler Lab Stuff
+## Where Emma's lab notes and code live
