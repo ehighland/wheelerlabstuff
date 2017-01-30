@@ -14,4 +14,4 @@ Combine with Aly's elastic net stuff
 01/30/17 notes
 Populations: MKK, MEX, GIH, LWK (do not run), CHB, JPT 
 YRI already run
-Will now run MKK
+Currently running: GIH chromosomes 1 - 4 on cores 8 - 11
