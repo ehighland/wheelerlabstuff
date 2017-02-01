@@ -20,3 +20,31 @@ Currently running: GIH chromosomes 1 - 4 on cores 8 - 11
 Running: GIH chromosomes 5 - 8 on cores 5 - 8 (in same order)
 Completed: GIH chromosomes 2, 3, and 4
 
+Once done running, generate same figures as for YRI
+
+Work on single populations for now
+Will want to adjust expression levels
+for ancestry principle components -- software: Smart PCA
+
+For code: can take up to 6 cores
+Can start by combining 
+
+Get a variable for core # and for chromosome #
+
+Most efficient way: work backwards? Take advantage of smaller chromosomes 
+(18-22) 
+
+Could also go by numbers of genes per chromosome?
+
+Script of scripts
+Just a script to run BSLMM
+nohup script to call that script -- 6 commands for 6 cores
+Each nohup script is calling a different number of chromosome commands
+
+Look at file size and divide into 6 groups
+
+Can later have a variable for population
+
+02/01/17
+GIH chromosomes 1-8 are completed.
+I am working on the "script of scripts"
