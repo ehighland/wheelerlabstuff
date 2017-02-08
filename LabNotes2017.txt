@@ -69,14 +69,12 @@ one file: GIH_results.txt.
 Next up: JPT
 
 Groups:
-1 -- Chromosomes 1, 21 
-2 -- 2, 22
-3 -- 3, 19, 18
-4 -- 4, 16
+1 -- Chromosomes 1, 21, 7 
+2 -- 2, 22, 8, 17
+3 -- 3, 19, 18, 10
+4 -- 4, 16, 9, 12
 5 -- 5, 15, 14
-6 -- 6, 20, 13
-
-Remaining: 7, 8, 9, 10, 11, 12, 20
+6 -- 6, 20, 13, 11
 
 Meeting with Dr. Wheeler
 
@@ -89,4 +87,10 @@ Could have for loop. Nohup is inherited.
 Put 6 nohup commands in a script. USE AMPERSAND at end!!! Maybe use echo?
 
 Update:
-All 6 groups are currently running on cores 6 - 11. Will need to do a second run with remaining chromosomes.
+All 6 groups are currently running on cores 6 - 11.
+
+02/08/17
+
+None of the JPT chromosomes finished. Computer possibly restarted? 
+There's a high load of activity right now, so I'm only going to use 4 cores
+(7, 8, 9, and 10).
