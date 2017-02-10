@@ -77,7 +77,7 @@ Groups:
 6 -- 6, 20, 13, 11
 
 Meeting with Dr. Wheeler
-
+************************
 Looking ahead: pve50 for each gene in each population (percent variance explained) can be compared. Pearson correlation between each population.
 After JPT, do CHB. Can run East Asians together. Aly will soon be done with LWK, can proceed with African groups. 
 When combining, put input matrices together. Right now, calling genotype and expression files. Use cat. 
@@ -90,7 +90,11 @@ Update:
 All 6 groups are currently running on cores 6 - 11.
 
 02/08/17
-
 None of the JPT chromosomes finished. Computer possibly restarted? 
 There's a high load of activity right now, so I'm only going to use 4 cores
 (7, 8, 9, and 10).
+
+02/09/17
+JPT chromosomes 2, 3, 4, 16, and 18 have finished. 
+Everything else is still running on cores 7-10. 
+I'm going to run the remaining two groups now on cores 6 and 11.
