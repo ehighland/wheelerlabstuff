@@ -98,3 +98,8 @@ There's a high load of activity right now, so I'm only going to use 4 cores
 JPT chromosomes 2, 3, 4, 16, and 18 have finished. 
 Everything else is still running on cores 7-10. 
 I'm going to run the remaining two groups now on cores 6 and 11.
+
+8:30pm update -- 22 now also done!
+
+02/10/17
+JPT chromosomes 1, 2, 3, 4, 5, 6, 8, 9, 13, 16, 18, 19, 21, 22 are done
