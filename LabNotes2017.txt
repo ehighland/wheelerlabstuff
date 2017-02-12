@@ -103,3 +103,19 @@ I'm going to run the remaining two groups now on cores 6 and 11.
 
 02/10/17
 JPT chromosomes 1, 2, 3, 4, 5, 6, 8, 9, 13, 16, 18, 19, 21, 22 are done
+
+02/11/17
+All JPT chromosomes are done. The files have been prepared for R graphing via my 
+combineAndFilter python script.
+
+Now I am moving on to CHB.
+
+Groups for cores:
+1 -- 21, 14, 2, 12
+2 -- 1, 16, 22, 8
+3 -- 17, 15, 19, 3
+4 -- 5, 13, 11
+5 -- 20, 4, 9
+6 -- 7, 6, 10, 18   
+
+Running now on cores 6-11.
