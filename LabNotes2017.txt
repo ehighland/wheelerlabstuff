@@ -119,3 +119,13 @@ Groups for cores:
 6 -- 7, 6, 10, 18   
 
 Running now on cores 6-11.
+
+02/12/17
+As of 12:55pm, CHB chromosomes 13, 14, 17, 20, 21, 5,and 7 have finished 
+running.
+
+02/13/17
+As of ~2:40pm, CHB chromosomes 1, 2, 4, 5, 6, 7, 9, 10, 11, 13, 14, 
+15, 16, 17, 18, 19, 20, and 21 are done running. 
+Chromosomes 3, 8, 12, and 22 are still running. 
+ 
