@@ -161,32 +161,7 @@ as above (for MKK). Groups 1-6 are running on cores 1-6.
 I've also made a lot of progress with a python script to add a 
 population column. The script is called getItTogether.py
 
-02/28/17
-Problem with MKK: check numbers of cols and rows in each file
-Could be that large one includes people in smaller matrix
-Could be that there are more people in one file
-Python script
+02/26/17
+MEX is done running. All individual populations have been processed except for MKK and LWK. 
+I have figures (in R Markdown files) for all the populations I've processed except MEX. 
 
-For gemma, multiple SNPs going to each gene
-Key thing: number of people needs to be the same (NA- numbers at top of file)
-
-Run gemma with ***people*** combined
---> Make a NEW genotype matrix with Japanese AND Chinese people
-----> Go into input files (genotype file -- gt)
-----> top row would be CHB1...JPT1...etc
-----> Looking for overlap
----> When merging, only keep SNPs that overlap/are in both/intersection
-
-What I have is useful for +facet_wrap(pop) -- PGE vs. PVE
-
-Plot should look tighter with CHB and JPT combined 
-
-LWK and MKK still being worked on
-LWK -- predixcan -- is new imputation good?
---> Compare predicted to observed and look for good correlation
-Might be similar issue with MKK
-
-For now: Focus on getting MKK working and combine CHB and JPT
-
-After break: potentially look at MESA
-Have MKK and Asian population figured out by next meeting (March 14th)
