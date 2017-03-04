@@ -194,3 +194,7 @@ For now: Focus on getting MKK working and combine CHB and JPT
 
 After break: potentially look at MESA
 Have MKK and Asian population figured out by next meeting (March 14th)
+
+03/04/17
+The Expression file for JPT and CHB (with only overlapping SNPs) has been generated!
+I'm adding the code that generated the overlap file to github.
