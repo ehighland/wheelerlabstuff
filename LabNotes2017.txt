@@ -198,3 +198,40 @@ Have MKK and Asian population figured out by next meeting (March 14th)
 03/04/17
 The Expression file for JPT and CHB (with only overlapping SNPs) has been generated!
 I'm adding the code that generated the overlap file to github.
+
+03/14/17
+Consider combining in R rather than python
+-->Good practice in Python
+-->Rewrite in R!
+---->In R package called dplyr
+------>Can join the Illumina IDs -- any gene in one population but 
+not the other would be excluded.
+The gt files will be pretty big! Don't remake them all.
+
+Cheatsheet for dplyr
+
+Use original files -- all IDs are unique so no need to add -CHB or -JPT
+
+LWK is ready -- check with Aly
+MKK will be done soon
+
+Combine African pops
+
+MESA data in a week or two -- what format? Slightly different from 
+existing files. Maybe have to tweak code.
+Lauren is presenting at glbio in May, get done before then.
+
+03/20/17
+I'm now running MKK again on cores 1-6. Everything appears to be working
+this time!
+
+03/21/17
+MKK still weird -- missing column?
+Use R read.table to look at gzipped file to check if all MKK chromosome files are missing this column
+Open in Excel to check amount of cols
+Check with Aly -- did she modify code to exclude dotted column?
+If dotted column removed would colnames be the same size?
+
+For R: try R package data.table
+
+UPDATE: R script is now working, thanks to locating the *correct* files
