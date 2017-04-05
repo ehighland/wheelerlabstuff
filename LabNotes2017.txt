@@ -235,3 +235,94 @@ If dotted column removed would colnames be the same size?
 For R: try R package data.table
 
 UPDATE: R script is now working, thanks to locating the *correct* files
+
+03/27/17
+For running the Asian group, I have combined Expression, SNPs, and SNPs_Location files. 
+I am currently working on modifying a copy of the bslmm_for_emma.r script to use
+these combined files. 
+
+I am curious about the allelecode part in the original bslmm_for_emma.r file...how
+should I handle this with two groups?  
+
+03/28/17
+So only use SNPs present in both JPT and CHB files
+--> redo the combos with inner_join
+
+Note: to get rid of row numbers
+write.table(file, "filename", quote=F, row.names=F)
+-->Will get rid of quotation marks and row numbers
+
+The key: want to end up with same order (CHB then JPT)
+
+allelecode --> can do same type of inner_join
+
+Just keep combining input files!
+
+Ask Aly about gt files -- see to do list
+
+2:38pm update: snps.sh and anno.sh are running again to re-do 
+the gt and annotation files.
+
+10:40pm update:
+All the files are combined, but it's not working yet. I am getting the
+Illumina gene names, but not the stats. All the stats show as NA.
+
+04/04/17
+In an attempt to fix BSLMM issues, I'm re-running the SNP annotation combination
+for CHB and JPT (in that order!) I realized that r script did not
+have "quote=F, row.names=F" in write.table. I think that having row numbers
+and quotes maybe threw off the bslmm_for_asian.r code. 
+
+Note: this ^ turned out to not fix anything!
+
+MEETING NOTES
+************
+Sometimes when data is combined it might be read as a factor instead of 
+a character. We need it to be read as a character for string
+matching. Double check!
+
+Check that SNP annotation file is same size as SNP genotype file.
+
+Could try setting i=1 in "for(i in 1:length(explist)){" and
+stepping through/debugging in R Studio
+
+Compare CHB original to combined --> make sure CHB data is perserved
+correctly
+
+For this line:
+cisgenos <- subset(popgt,popgt[,3]>=start & popgt[,3]<=end) ### pull cis-SNP genotypes
+Check 3rd column from popgt!
+
+Initial popgt:
+popgt <- left_join(snpcode,gt,by=c("snp"="id"))
+
+Eventual popgit:
+popgt <- popgt[popgt[,3] %in% allelecode$POS,] #only keep SNPs in allelecode file (removes esv SNPs)
+
+For MKK:
+One person has all missing data, as previously encountered.
+To move forward, just ignore this column?
+ 
+For now, focus on Asian group!
+
+Post filepath for elastic net script and gemma script on slack for Dr. Wheeler
+
+04/05/17
+Chromosome 22 from the combined Asian population is running now! I'm not 100% sure
+how I resolved the error. The variables popgt and cisgenos were both 
+fine when I ran tests (i.e. all the data appeared to be in the right place).
+The only change I made was to allelecode. Rather than have one line like so...
+From the original bslmm_for_emma.r file:
+allelecode <- read.table("/home/wheelerlab1/elastic_net/allele_annot_files/chr" %&% chromosome %&% "_" %&% pop %&% ".txt.gz")
+
+I shifted to two lines of code -- one to defined a variable allele.file and another for
+allelecode:
+
+allele.file <- "/home/emma/AsianGroupFiles/alleleAnnotation/combined_CHB_JPT_22_allele_annotation.txt"
+allelecode <- read.table(allele.file,header=TRUE)
+
+I explicitly defined the allele.file here, so I suspect that something was
+going wrong with grabbing the allele annotation files? I'm not sure
+what, though.
+
+Long story short: Chromosome 22 is working! 
