@@ -326,3 +326,6 @@ going wrong with grabbing the allele annotation files? I'm not sure
 what, though.
 
 Long story short: Chromosome 22 is working! 
+
+5:40pm update:
+All combined Asian group files are now running with no apparent issues!
